@@ -1,6 +1,5 @@
 streamlit
-PyPDF2==3.0.0
-
+pdfplumber
 langchain
 langchain_groq
 faiss-cpu
