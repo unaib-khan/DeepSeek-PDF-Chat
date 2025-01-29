@@ -1,4 +1,4 @@
-import pdfplumber
+from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
 from langchain.embeddings import HuggingFaceEmbeddings
