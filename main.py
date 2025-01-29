@@ -9,11 +9,9 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
-os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
-groq_api_key = st.secrets["GROQ_API_KEY"]["api_key"]
-
-
-
+# Access the API key value correctly
+api_key = st.secrets["GROQ_API_KEY"]["api_key"]
+os.environ["GROQ_API_KEY"] = api_key
 # Load environment variables
 load_dotenv()
 
@@ -58,7 +56,7 @@ def get_conversational_chain():
     model = ChatGroq(
         temperature=0.3,
         model_name="deepseek-r1-distill-llama-70b",  # Using Mixtral model through Groq
-        groq_api_key = st.secrets["GROQ_API_KEY"]["api_key"]
+        groq_api_key=os.getenv("GROQ_API_KEY")
     )
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
