@@ -9,9 +9,13 @@ from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 
+os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+groq_api_key = st.secrets["GROQ_API_KEY"]["api_key"]
+
+
+
 # Load environment variables
 load_dotenv()
-secrets = st.secrets["GROQ_API_KEY"]["api_key"]
 
 # Load Sentence Transformer model
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
@@ -54,7 +58,7 @@ def get_conversational_chain():
     model = ChatGroq(
         temperature=0.3,
         model_name="deepseek-r1-distill-llama-70b",  # Using Mixtral model through Groq
-        groq_api_key=os.getenv("GROQ_API_KEY")
+        groq_api_key = st.secrets["GROQ_API_KEY"]["api_key"]
     )
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
