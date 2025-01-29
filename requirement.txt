@@ -1,5 +1,5 @@
 streamlit
-pdfplumber
+pdfplumber==0.5.28
 langchain
 langchain_groq
 faiss-cpu
