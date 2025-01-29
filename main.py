@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-st.secrets("GROQ_API_KEY")
+secrets= st.secrets("GROQ_API_KEY")
 
 # Load Sentence Transformer model
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
