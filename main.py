@@ -16,12 +16,12 @@ secrets= st.secrets("GROQ_API_KEY")
 embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 def get_pdf_text(pdf_docs):
-    """Extracts text from uploaded PDF files using pdfplumber."""
+    """Extracts text from uploaded PDF files."""
     text = ""
     for pdf in pdf_docs:
-        with pdfplumber.open(pdf) as pdf_reader:
-            for page in pdf_reader.pages:
-                text += page.extract_text()
+        pdf_reader = PdfReader(pdf)
+        for page in pdf_reader.pages:
+            text += page.extract_text()
     return text
 
 def get_text_chunks(text):
