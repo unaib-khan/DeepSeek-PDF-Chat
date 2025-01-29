@@ -1,10 +1,3 @@
-import streamlit as st
-import subprocess
-import sys
-
-# Ensure PyPDF2 is installed
-subprocess.check_call([sys.executable, "-m", "pip", "install", "PyPDF2"])
-
 from PyPDF2 import PdfReader
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
