@@ -6,4 +6,7 @@ faiss-cpu
 huggingface-hub
 python-dotenv
 langchain-community
+langchain
 sentence-transformers
+transformers
+
