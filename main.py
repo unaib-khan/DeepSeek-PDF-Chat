@@ -101,7 +101,8 @@ def main():
     if user_question:
         with st.spinner("Fetching your answer..."):
             user_input(user_question)
-
+    st.markdown("---")
+    st.markdown("Created with ❤️ by Unaib")
 
 if __name__ == "__main__":
     main()
