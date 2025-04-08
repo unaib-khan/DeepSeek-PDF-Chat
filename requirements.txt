@@ -1,12 +1,11 @@
 streamlit
-langchain>=0.1.0
-sentence-transformers==2.2.2
-PyPDF2
-langchain_groq
-faiss-cpu
-huggingface-hub
+pypdf2
+langchain>=0.3.17
+langchain-community>=0.0.15
+sentence-transformers>=3.3.1
+transformers>=4.46.3
+huggingface_hub>=0.26.3
+langchain-groq>=0.2.2 # Ensure this is included for ChatGroq
 python-dotenv
-langchain-community
-transformers>=4.35.0
-langchain>=0.1.0
+python>=3.10
 
