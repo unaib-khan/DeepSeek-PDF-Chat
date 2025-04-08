@@ -1,12 +1,12 @@
 streamlit
+langchain>=0.1.0
+sentence-transformers==2.2.2
 PyPDF2
-langchain
 langchain_groq
 faiss-cpu
 huggingface-hub
 python-dotenv
 langchain-community
-langchain
-sentence-transformers
-transformers
+transformers>=4.35.0
+langchain>=0.1.0
 
