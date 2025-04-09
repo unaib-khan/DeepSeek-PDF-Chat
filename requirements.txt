@@ -1,11 +1,9 @@
 streamlit
 pypdf2
-langchain>=0.3.17
+langchain>=0.3.17,<0.5.0       # Adjust upper bound if necessary
 langchain-community>=0.0.15
 sentence-transformers>=3.3.1
 transformers>=4.46.3
 huggingface_hub>=0.26.3
-langchain-groq>=0.2.2 # Ensure this is included for ChatGroq
+langchain-groq>=0.2.2
 python-dotenv
-python>=3.10
-
